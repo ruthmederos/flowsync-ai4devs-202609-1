@@ -80,18 +80,27 @@ Es una sola funcionalidad fina, usable de principio a fin:
 
 ## Decisión de recorte
 
-**Cómo se cuenta:** cada capacidad es una acción o una vista que el usuario distingue por sí misma, y se ha contado igual en la propuesta inicial y en la final. La fecha de vencimiento con su marca de vencida cuenta como una capacidad propia en los dos recuentos.
+**1. Los dos números: 7 → 8.**
 
-- **Capacidades que la IA propuso inicialmente para el MVP: 8.**
-  1. Acceso con cuenta.
-  2. Crear una tarea.
-  3. Cambiar el estado.
-  4. Asignar o reasignar el responsable.
-  5. Fecha de vencimiento con la marca de vencida.
-  6. Lista compartida.
-  7. Filtrar por estado.
-  8. Ver los cambios sin recargar.
-- **Capacidades que quedan en el alcance a construir tras la revisión: 8.** Sale el acceso con cuenta, porque ya existe y pasa a ser contexto. Entra editar título y fecha.
-- **La exclusión que más me costó:** borrar o archivar tareas.
-- **Por qué la mantengo fuera:** no hace falta para validar si una lista compartida y al día elimina la ronda de estado. Acepto ese riesgo durante la semana de prueba.
-- **Qué me haría meterla en el MVP:** que las tareas creadas por error metan tanto ruido que el equipo deje de confiar en la lista.
+- **7:** las capacidades que la IA propuso meter dentro en su primera propuesta, de 27 candidatas: acceso con cuenta, crear una tarea, cambiar el estado, asignar o reasignar el responsable, lista compartida con la marca de vencida, filtrar por estado y ver los cambios sin recargar.
+- **8:** las capacidades que quedan en el alcance a construir de este documento después de mi revisión.
+
+**Por qué los criterios de conteo no coinciden entre uno y otro:**
+
+- El 7 incluía el acceso con cuenta, que ya existe. En mi revisión lo saqué para dejarlo como contexto.
+- El 7 metía la fecha de vencimiento y la marca de vencida dentro de "lista compartida". En el alcance final son un punto propio.
+- Añadí editar título y fecha, después de discutir con la IA una incoherencia en su propuesta.
+- En el chat, el recuento posterior a mi revisión también dio 7, porque la IA juntó "filtrar por estado" y "ver los cambios sin recargar" en un solo punto. En este documento son dos, y por eso sale 8.
+- Contando con el mismo criterio las dos veces, la IA propuso 8 y quedaron 8: salió el acceso con cuenta y entró editar título y fecha. Los recortes están en las 19 exclusiones del NO-alcance, no en la cifra de lo que queda dentro.
+
+**2. Tres cosas que dejé fuera, y por qué:**
+
+- **Estado derivado de Git, PRs, CI o calendario:** valida otra hipótesis, la de que el estado puede deducirse solo. No valida la H2, que la persona mantenga el estado al día a mano porque le cuesta dos clics.
+- **Importar tareas o convivir con el gestor actual:** actualizar en dos sitios rompe la H2. Con doble actualización, una lista desactualizada no demostraría nada sobre si el equipo mantiene al día una lista compartida.
+- **Notificaciones push:** la hipótesis principal es que el estado se ve sin interrumpir a nadie. Un aviso vuelve a interrumpir, así que no ayuda a validar si la lista sustituye a la ronda de "¿en qué estás?".
+
+**3. La exclusión de la que menos segura estoy (la que más me costó): borrar o archivar tareas.**
+
+- **Qué se contradecía:** por un lado, recortar todo lo que no hace falta para validar si una lista compartida y al día elimina la ronda de estado. Por otro, que esa lista tiene que ser fiable. Una tarea creada por error que no se puede quitar es información falsa en la lista, que es justo el riesgo nº 1.
+- **Por qué la mantengo fuera:** no es necesaria para validar si una lista compartida y actualizada elimina la ronda de estado. Acepto ese riesgo durante la semana de prueba.
+- **Qué la haría entrar en el MVP:** que las tareas creadas por error metan tanto ruido que el equipo deje de confiar en la lista.
